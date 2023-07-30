@@ -12,6 +12,8 @@ import typescript from '../../assets/techsLogos/typescript.svg';
 import yarn from '../../assets/techsLogos/yarn.svg';
 import cleanCode from '../../assets/techsLogos/cleanCode.png';
 import styledComponents from '../../assets/techsLogos/styledComponents.svg';
+import django from '../../assets/techsLogos/django.png';
+import python from '../../assets/techsLogos/python2.png';
 
 export const techList = [
   {
@@ -84,5 +86,15 @@ export const techList = [
     title: 'Slack',
     padding: 10,
     img: slack,
+  },
+  {
+    title: 'Django',
+    padding: 10,
+    img: django,
+  },
+  {
+    title: 'Python',
+    padding: 7,
+    img: python,
   },
 ];

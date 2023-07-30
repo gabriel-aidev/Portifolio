@@ -14,9 +14,10 @@ export const StyledHomePage = styled.main`
 
     .backend {
       margin-top: 30px;
-      text-align: end;
+      text-align: justify;
       color: ${({ theme }) => theme.colors.backGreen300};
-      font-size: 25px;
+      font-size: 18px;
+      max-width: 670px;
     }
 
     span {

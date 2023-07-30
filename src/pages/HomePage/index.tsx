@@ -18,12 +18,19 @@ const HomePage = () => {
       <Container>
         <section>
           <div className='title-area'>
-            <h1>Desenvolvedor FrontEnd</h1>
+            <h1>Desenvolvedor Fullstack</h1>
             <span className='sub-title-area'>
-              <h2 className='backend'> &lt; BackEnd</h2>
-              <span className='anim-box'>
+              <h2 className='backend'>
+                {' '}
+                Experiência em projetos individuais e em equipe com tecnologias como HTML, CSS,
+                Javascript, React, Styled Components, Typescript, Git, e backend com Node.js,
+                express, django, python. Trabalhando com boas práticas de código e metodologias
+                ágeis como Scrum. Possuo conhecimento intermediário de inglês envolvendo escrita e
+                conversação, e básico em espanhol.
+              </h2>
+              {/* <span className='anim-box'>
                 <h2 className='anim'>em formação /&gt;</h2>
-              </span>
+              </span> */}
             </span>
             <div className='contacts-icons'>
               <a href='mailto:gabrielc.maciel42@gmail.com' target={'_blank'}>

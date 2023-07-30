@@ -21,6 +21,7 @@ import {
 
 import { Container } from '../../styles/global';
 import { modalStyle, StyledProjectsPage } from './style';
+import { Link } from 'react-router-dom';
 
 const ProjectsPage = () => {
   const [openM1, setOpenM1] = React.useState(false);
@@ -167,11 +168,25 @@ const ProjectsPage = () => {
         {openM1 && otherProjectsExpand(m1Techs, m1Projects)}
         {openM2 && otherProjectsExpand(m2Techs, m2Projects)}
         {openM3 && otherProjectsExpand(m3Techs, m3Projects)}
-        <h2 className='other-projects-title'>Certificado Front End</h2>
+        <h2 className='other-projects-title'>
+          <Link style={{ fontSize: 20 }} target='blank' to='https://github.com/PONGSU'>
+            Clique aqui para acessar todos meus projetos públicos no GitHub
+          </Link>
+        </h2>
+        <h2 className='other-projects-title'>Certificados</h2>
         <div className='certificate-box'>
           <iframe
             style={{ border: 'none' }}
             src='https://drive.google.com/file/d/1MzUV1dLgUsdeqW532pguxiyt37GVF7ow/preview'
+            width='940'
+            height='585'
+            allow='autoplay'
+          ></iframe>
+        </div>
+        <div className='certificate-box'>
+          <iframe
+            style={{ border: 'none' }}
+            src='https://drive.google.com/file/d/1xC0lm6k7Hr9fEuEZdxm4v2S8Smb7fo5G/preview'
             width='940'
             height='585'
             allow='autoplay'
