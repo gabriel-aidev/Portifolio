@@ -23,10 +23,10 @@ const HomePage = () => {
               <h2 className='backend'>
                 {' '}
                 Experiência em projetos individuais e em equipe com tecnologias como HTML, CSS,
-                Javascript, React, Styled Components, Typescript, Git, e backend com Node.js,
-                express, django, python. Trabalhando com boas práticas de código e metodologias
-                ágeis como Scrum. Possuo conhecimento intermediário de inglês envolvendo escrita e
-                conversação, e básico em espanhol.
+                Javascript, React, Styled Components, Typescript, Node.js, Git, Git Flow, express,
+                python, django typeOrm, noSQL, postgress, utilizando sempre boas práticas de código
+                e metodologias ágeis como Scrum. Possuo conhecimento intermediário de inglês
+                envolvendo escrita e conversação, e básico em espanhol.
               </h2>
               {/* <span className='anim-box'>
                 <h2 className='anim'>em formação /&gt;</h2>

@@ -32,12 +32,16 @@ export function MainProjectsSlider({}) {
                 <h2>{project.name}</h2>
                 <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
                 <span>
-                  <a href={project.deploy} target='_blank'>
-                    <FaGlobe /> Acesse o site
-                  </a>
-                  <a href={project.repository} target='_blank'>
-                    <FaGithub /> Ver repositório
-                  </a>
+                  {project.deploy && (
+                    <a href={project.deploy} target='_blank'>
+                      <FaGlobe /> Acesse o site
+                    </a>
+                  )}
+                  {project.repository && (
+                    <a href={project.repository} target='_blank'>
+                      <FaGithub /> Ver repositório
+                    </a>
+                  )}
                 </span>
               </aside>
             </StyledArticle>

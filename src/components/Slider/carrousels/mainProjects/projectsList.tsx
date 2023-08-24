@@ -4,8 +4,17 @@ import eCommerceLogo from '../../../../assets/projectsVideos/eCommerceLogo.png';
 import kenzieHubLogo from '../../../../assets/projectsVideos/kenzieHubLogo.png';
 import KenzieHub from '../../../../assets/projectsVideos/KenzieHub.mp4';
 import Hamburgueria from '../../../../assets/projectsVideos/Hamburgueria.mp4';
+import controlePontosLogo from '../../../../assets/projectsVideos/controledepontosLogo.png';
+import controlePontos from '../../../../assets/projectsVideos/controlePontos.mp4';
 
 export const projectsList = [
+  {
+    name: 'Controle de Pontos',
+    description:
+      'Projeto a principio pessoal para estudos, que acabou evoluindo e se tornando meu primeiro trabalho freelance como desenvolvedor. <br/> <br/> Aplicação Front End, utilizando React.js, consome a API do discord para mapear pontos de entrada e saída de serviço. Trata esses dados e exibe de forma intuitiva e simples a quantidade de horas e os dias que determinado funcionário esteve presente, sendo possível aplicar filtros por data, nome, id. <br/> <br/> É possível ver em um gráfico a quantidade e quem quem esteve em serviço em cada dia, entre outras funcionalidades melhores apresentadas no vídeo.',
+    video: controlePontos,
+    thumbnail: controlePontosLogo,
+  },
   {
     name: 'HomeYou',
     description:
