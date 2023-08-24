@@ -53,7 +53,7 @@ const HomePage = () => {
           <div className='curriculum-box'>
             <p>Currículo</p>
             <a
-              href='https://drive.google.com/file/d/1tD8QamNgF0jgbwKVvmVBfE62ualnujkK/view?usp=share_link'
+              href='https://drive.google.com/file/d/19OysCdcoYy2lTYzbz6gXbwklu4GAuU_k/view?usp=sharing'
               target={'_blank'}
             >
               <RxEyeOpen />
