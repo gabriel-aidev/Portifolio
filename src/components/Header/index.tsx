@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 
 import { StyledHeader } from './style';
@@ -7,24 +6,33 @@ import { Container } from '../../styles/global';
 import headerLogo from '../../assets/headerLogo.png';
 
 const Header = () => {
-  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <StyledHeader>
       <Container>
         <div className='header'>
-          <div onClick={() => navigate('/')} className='logo-box'>
-            <img src={headerLogo} alt='logo' />
-            <h2>Gabriel Maciel</h2>
-          </div>
+          <Link to={'/'} className='logo-box' aria-label='Ir para a página inicial'>
+            <img src={headerLogo} alt='' />
+            <span className='logo-name'>Gabriel Maciel</span>
+          </Link>
           <ul className='desktop-menu'>
             <li>
-              <Link to={'/'}>Início</Link>
+              <Link className={isActive('/') ? 'active' : ''} to={'/'}>
+                Início
+              </Link>
             </li>
             <li>
-              <Link to={'/projetos'}>Projetos</Link>
+              <Link className={isActive('/projetos') ? 'active' : ''} to={'/projetos'}>
+                Projetos
+              </Link>
             </li>
             <li>
-              <Link to={'/contato'}>Contato</Link>
+              <Link className={isActive('/contato') ? 'active' : ''} to={'/contato'}>
+                Contato
+              </Link>
             </li>
           </ul>
         </div>

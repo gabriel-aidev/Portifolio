@@ -1,49 +1,79 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-  background-color: ${({ theme }) => theme.colors.grey500};
-  color: ${({ theme }) => theme.colors.grey100};
+  background-color: ${({ theme }) => theme.colors.surface};
+  color: ${({ theme }) => theme.colors.text};
   width: 270px;
-  height: max-content;
-  border-radius: 4px;
-  padding: 15px;
+  max-width: 100%;
+  height: 100%;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radii.md};
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  font-size: 15px;
-  gap: 20px;
+  font-size: 14px;
+  gap: 14px;
   margin-bottom: 20px;
+  transition: transform ${({ theme }) => theme.transitions.base},
+    border-color ${({ theme }) => theme.transitions.base};
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: ${({ theme }) => theme.colors.accent};
+  }
 
   .spacer {
     height: 1px;
-    background-color: ${({ theme }) => theme.colors.grey400};
-    margin-top: -10px;
-    margin-bottom: -10px;
+    background-color: ${({ theme }) => theme.colors.border};
   }
 
-  span {
-    display: flex;
-    justify-content: space-between;
+  .other-project-text {
+    color: ${({ theme }) => theme.colors.textMuted};
+    line-height: 1.5;
+    flex: 1;
   }
 
-  a {
-    color: ${({ theme }) => theme.colors.grey00};
+  .other-project-links {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+  }
+
+  .other-project-links a {
+    display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: ${({ theme }) => theme.radii.pill};
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    background-color: ${({ theme }) => theme.colors.surfaceHover};
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 13px;
+    transition: border-color ${({ theme }) => theme.transitions.fast},
+      color ${({ theme }) => theme.transitions.fast};
   }
 
-  a:hover {
-    color: ${({ theme }) => theme.colors.secondary00};
+  .other-project-links a:hover {
+    border-color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.colors.accent};
   }
 
   .api-modal-link {
-    cursor: pointer;
+    display: block;
+    margin-top: 8px;
+    padding: 0;
+    background: none;
+    border: none;
+    font: inherit;
+    color: ${({ theme }) => theme.colors.accent};
     text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    text-align: left;
   }
 
   .api-modal-link:hover {
-    color: ${({ theme }) => theme.colors.secondary00};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
