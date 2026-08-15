@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { SlArrowDown, SlArrowUp } from 'react-icons/sl';
+import { SlArrowDown } from 'react-icons/sl';
 import { Box, Chip, ClickAwayListener, Modal } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import { MainProjectsSlider } from '../../components/Slider/carrousels/mainProjects';
 import { OtherProjectsSlider } from '../../components/Slider/carrousels/OtherProjects';
+import { useReveal } from '../../hooks/useReveal';
 
 import {
   m1Projects,
@@ -48,6 +49,11 @@ const ProjectsPage = () => {
   const [openM3, setOpenM3] = React.useState(false);
   const [modalOpened, setModalOpened] = React.useState<number | null>(null);
   const [modalList, setModalList] = React.useState<OtherProject[]>([]);
+
+  const featuredRef = useReveal<HTMLDivElement>();
+  const modulesRef = useReveal<HTMLUListElement>();
+  const githubRef = useReveal<HTMLDivElement>();
+  const certsRef = useReveal<HTMLDivElement>();
 
   const anyOpen = openM1 || openM2 || openM3;
 
@@ -107,12 +113,14 @@ const ProjectsPage = () => {
     <StyledProjectsPage>
       <Header />
       <Container className='projects-container'>
-        <SectionTitle as='h1'>Projetos em destaque</SectionTitle>
-        <MainProjectsSlider />
+        <div className='featured-projects-section' ref={featuredRef}>
+          <SectionTitle as='h1'>Projetos em destaque</SectionTitle>
+          <MainProjectsSlider />
+        </div>
         <SectionTitle>Outros Projetos</SectionTitle>
         <ClickAwayListener onClickAway={handleClickAway}>
           <div className='other-projects-region'>
-            <ul className='other-projects-section'>
+            <ul className='other-projects-section' ref={modulesRef}>
               <li>
                 <ModuleButton
                   type='button'
@@ -125,11 +133,7 @@ const ProjectsPage = () => {
                     <h3>Introdução ao Front End</h3>
                     <span className='module-sub'>HTML, CSS, JS</span>
                   </span>
-                  {openM1 ? (
-                    <SlArrowUp className='arrowUp' />
-                  ) : (
-                    <SlArrowDown className='arrowDown' />
-                  )}
+                  <SlArrowDown className='module-arrow' />
                 </ModuleButton>
               </li>
               <li>
@@ -144,11 +148,7 @@ const ProjectsPage = () => {
                     <h3>Aprofundando em JS, CSS</h3>
                     <span className='module-sub'>Consumindo APIs</span>
                   </span>
-                  {openM2 ? (
-                    <SlArrowUp className='arrowUp' />
-                  ) : (
-                    <SlArrowDown className='arrowDown' />
-                  )}
+                  <SlArrowDown className='module-arrow' />
                 </ModuleButton>
               </li>
               <li>
@@ -163,11 +163,7 @@ const ProjectsPage = () => {
                     <h3>React, TypeScript</h3>
                     <span className='module-sub'>Estrutura de projetos</span>
                   </span>
-                  {openM3 ? (
-                    <SlArrowUp className='arrowUp' />
-                  ) : (
-                    <SlArrowDown className='arrowDown' />
-                  )}
+                  <SlArrowDown className='module-arrow' />
                 </ModuleButton>
               </li>
             </ul>
@@ -177,31 +173,33 @@ const ProjectsPage = () => {
           </div>
         </ClickAwayListener>
 
-        <div className='github-callout'>
+        <div className='github-callout' ref={githubRef}>
           <Link to='https://github.com/PONGSU' target='_blank' rel='noreferrer'>
             <FaGithub /> Clique aqui para acessar todos meus projetos públicos no GitHub
           </Link>
         </div>
 
         <SectionTitle>Certificados</SectionTitle>
-        <div className='certificate-box'>
-          <div className='certificate-frame'>
-            <iframe
-              src='https://drive.google.com/file/d/1MzUV1dLgUsdeqW532pguxiyt37GVF7ow/preview'
-              title='Certificado de conclusão 1'
-              allow='autoplay'
-              loading='lazy'
-            ></iframe>
+        <div className='certificates-area' ref={certsRef}>
+          <div className='certificate-box'>
+            <div className='certificate-frame'>
+              <iframe
+                src='https://drive.google.com/file/d/1MzUV1dLgUsdeqW532pguxiyt37GVF7ow/preview'
+                title='Certificado de conclusão 1'
+                allow='autoplay'
+                loading='lazy'
+              ></iframe>
+            </div>
           </div>
-        </div>
-        <div className='certificate-box'>
-          <div className='certificate-frame'>
-            <iframe
-              src='https://drive.google.com/file/d/1xC0lm6k7Hr9fEuEZdxm4v2S8Smb7fo5G/preview'
-              title='Certificado de conclusão 2'
-              allow='autoplay'
-              loading='lazy'
-            ></iframe>
+          <div className='certificate-box'>
+            <div className='certificate-frame'>
+              <iframe
+                src='https://drive.google.com/file/d/1xC0lm6k7Hr9fEuEZdxm4v2S8Smb7fo5G/preview'
+                title='Certificado de conclusão 2'
+                allow='autoplay'
+                loading='lazy'
+              ></iframe>
+            </div>
           </div>
         </div>
 

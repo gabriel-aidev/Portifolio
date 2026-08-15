@@ -7,9 +7,12 @@ import { Container, SectionTitle } from '../../styles/global';
 import homePic from '../../assets/homePic.png';
 import TechsLogos from '../../components/TechsLogos';
 import curriculo from '../../assets/Curriculo-Gabriel-Carvalho-Maciel.pdf';
+import { useReveal } from '../../hooks/useReveal';
 import { StyledHomePage } from './style';
 
 const HomePage = () => {
+  const techsRef = useReveal<HTMLElement>();
+
   return (
     <StyledHomePage id='outer-container'>
       <Header />
@@ -76,7 +79,7 @@ const HomePage = () => {
             <img src={homePic} alt='Ilustração de Gabriel Maciel' />
           </div>
         </section>
-        <aside>
+        <aside ref={techsRef} className='techs-area'>
           <SectionTitle>Tecnologias</SectionTitle>
           <TechsLogos />
         </aside>

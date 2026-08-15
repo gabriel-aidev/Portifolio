@@ -15,11 +15,13 @@ export const StyledCard = styled.div`
   gap: 14px;
   margin-bottom: 20px;
   transition: transform ${({ theme }) => theme.transitions.base},
-    border-color ${({ theme }) => theme.transitions.base};
+    border-color ${({ theme }) => theme.transitions.base},
+    box-shadow ${({ theme }) => theme.transitions.base};
 
   &:hover {
     transform: translateY(-4px);
     border-color: ${({ theme }) => theme.colors.accent};
+    box-shadow: ${({ theme }) => theme.shadows.glow};
   }
 
   .spacer {

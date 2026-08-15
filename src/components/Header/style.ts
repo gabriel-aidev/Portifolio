@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mainTheme } from '../../styles/theme';
+import { enter } from '../../styles/motion';
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -9,6 +10,7 @@ export const StyledHeader = styled.header`
   border-bottom: 1px solid ${mainTheme.colors.border};
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  ${enter(0, 500)}
 
   .header {
     width: 100%;
@@ -21,6 +23,7 @@ export const StyledHeader = styled.header`
       display: flex;
       align-items: center;
       gap: 13px;
+      ${enter(120)}
 
       .logo-name {
         font-weight: 700;
@@ -38,6 +41,19 @@ export const StyledHeader = styled.header`
       display: none;
       align-items: center;
       gap: 25px;
+
+      li {
+        ${enter(180)}
+
+        &:nth-child(2) {
+          animation-delay: 240ms;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 300ms;
+        }
+      }
+
       a {
         position: relative;
         color: ${mainTheme.colors.textMuted};

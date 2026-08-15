@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { sheenOnHover } from '../../../../styles/motion';
 
 export const StyledArticle = styled.article`
   display: grid;
@@ -14,11 +15,13 @@ export const StyledArticle = styled.article`
   padding: 20px;
   margin-bottom: 13px;
   transition: box-shadow ${({ theme }) => theme.transitions.base},
-    border-color ${({ theme }) => theme.transitions.base};
+    border-color ${({ theme }) => theme.transitions.base},
+    transform ${({ theme }) => theme.transitions.base};
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.borderStrong};
     box-shadow: ${({ theme }) => theme.shadows.glow};
+    transform: translateY(-4px);
   }
 
   video {
@@ -29,6 +32,11 @@ export const StyledArticle = styled.article`
     border-radius: ${({ theme }) => theme.radii.md};
     border: 1px solid ${({ theme }) => theme.colors.border};
     background-color: ${({ theme }) => theme.colors.bgSoft};
+    transition: transform ${({ theme }) => theme.transitions.base};
+  }
+
+  &:hover video {
+    transform: scale(1.01);
   }
 
   aside {
@@ -95,6 +103,7 @@ export const StyledArticle = styled.article`
       background-color: ${({ theme }) => theme.colors.accentDeep};
       border: 1px solid ${({ theme }) => theme.colors.borderStrong};
       color: ${({ theme }) => theme.colors.accent};
+      ${sheenOnHover}
     }
 
     .deploy-link:hover {

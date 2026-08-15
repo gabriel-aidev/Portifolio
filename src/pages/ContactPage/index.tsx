@@ -5,6 +5,7 @@ import { FiMail, FiCheck } from 'react-icons/fi';
 import { FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 import Header from '../../components/Header';
+import { useReveal } from '../../hooks/useReveal';
 import { Container, SectionTitle } from '../../styles/global';
 import { StyledContactPage } from './style';
 
@@ -62,6 +63,7 @@ const contacts: ContactItem[] = [
 const ContactPage = () => {
   const [copiedKey, setCopiedKey] = useState<ContactKey | null>(null);
   const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cardRef = useReveal<HTMLElement>();
 
   useEffect(() => {
     return () => {
@@ -93,7 +95,7 @@ const ContactPage = () => {
           <SectionTitle as='h1'>Contato</SectionTitle>
           <p>Prefiro e-mail ou WhatsApp, respondo assim que vejo a mensagem.</p>
         </div>
-        <article className='contacts-card'>
+        <article className='contacts-card' ref={cardRef}>
           {contacts.map((contact) => {
             const isCopied = copiedKey === contact.key;
 

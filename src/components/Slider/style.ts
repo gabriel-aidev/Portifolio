@@ -32,13 +32,16 @@ const StyledSlider = styled(Swiper)`
     background-color: ${({ theme }) => theme.colors.textFaint};
     opacity: 0.5;
     border-radius: ${({ theme }) => theme.radii.pill};
-    transition: all ${({ theme }) => theme.transitions.fast};
+    transform-origin: center;
+    transition: opacity ${({ theme }) => theme.transitions.fast},
+      background-color ${({ theme }) => theme.transitions.fast},
+      transform ${({ theme }) => theme.transitions.base};
   }
 
   .swiper-pagination-bullet-active {
-    width: 20px;
     opacity: 1;
     background-color: ${({ theme }) => theme.colors.accent};
+    transform: scaleX(2.86);
   }
 
   .swiper-button-prev,
@@ -53,7 +56,8 @@ const StyledSlider = styled(Swiper)`
     color: ${({ theme }) => theme.colors.text};
     transition: border-color ${({ theme }) => theme.transitions.fast},
       color ${({ theme }) => theme.transitions.fast},
-      background-color ${({ theme }) => theme.transitions.fast};
+      background-color ${({ theme }) => theme.transitions.fast},
+      transform ${({ theme }) => theme.transitions.fast};
 
     &::after {
       font-size: 16px;
@@ -71,8 +75,9 @@ const StyledSlider = styled(Swiper)`
   .swiper-button-prev:hover,
   .swiper-button-next:hover {
     color: ${({ theme }) => theme.colors.accent};
-    border-color: ${({ theme }) => theme.colors.borderStrong};
+    border-color: ${({ theme }) => theme.colors.accent};
     background-color: ${({ theme }) => theme.colors.surfaceHover};
+    transform: scale(1.08);
   }
 
   .swiper-button-disabled {

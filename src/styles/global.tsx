@@ -91,8 +91,11 @@ export const GlobalStyle = createGlobalStyle`
 
     *, *::before, *::after{
       animation-duration: 0.01ms !important;
+      /* sem zerar o atraso, um elemento em cascata ficaria invisível durante ele */
+      animation-delay: 0ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
       scroll-behavior: auto !important;
     }
   }

@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import { mainTheme } from '../../styles/theme';
+import { revealable, revealStagger, sheenOnHover } from '../../styles/motion';
 
 export const StyledProjectsPage = styled.main`
   .projects-container {
     padding-top: 85px;
+  }
+
+  .featured-projects-section {
+    ${revealable}
   }
 
   .other-projects-section {
@@ -13,6 +18,7 @@ export const StyledProjectsPage = styled.main`
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
+    ${revealStagger('li', 3, 90)}
   }
 
   .other-projects-expands {
@@ -22,8 +28,17 @@ export const StyledProjectsPage = styled.main`
     box-shadow: ${({ theme }) => theme.shadows.soft};
     padding: 24px;
     margin-bottom: 50px;
-    /* o token já traz duração + curva; acrescentar outra timing function invalida o shorthand */
-    animation: fadeInUp ${({ theme }) => theme.transitions.slow};
+
+    /*
+      animações puras de CSS (sem useReveal) em navegadores automatizados com
+      prefers-reduced-motion podem ficar presas no primeiro frame do keyframe
+      mesmo com a duração zerada pelo GlobalStyle; por segurança, só roda
+      quando o usuário não pediu movimento reduzido.
+    */
+    @media (prefers-reduced-motion: no-preference) {
+      /* o token já traz duração + curva; acrescentar outra timing function invalida o shorthand */
+      animation: fadeInUp ${({ theme }) => theme.transitions.slow};
+    }
   }
 
   .skills-chips {
@@ -31,12 +46,29 @@ export const StyledProjectsPage = styled.main`
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 24px;
+
+    /* painel monta/desmonta sob demanda: cascata puramente em CSS, sem useReveal */
+    @media (prefers-reduced-motion: no-preference) {
+      > * {
+        animation: fadeInUp 420ms ease both;
+      }
+
+      ${Array.from(
+        { length: 12 },
+        (_, i) => `
+        > *:nth-child(${i + 1}) {
+          animation-delay: ${i * 35}ms;
+        }
+      `
+      ).join('')}
+    }
   }
 
   .github-callout {
     display: flex;
     justify-content: center;
     margin: 10px 0 50px;
+    ${revealable}
 
     a {
       display: inline-flex;
@@ -51,12 +83,17 @@ export const StyledProjectsPage = styled.main`
       text-align: center;
       transition: transform ${({ theme }) => theme.transitions.fast},
         border-color ${({ theme }) => theme.transitions.fast};
+      ${sheenOnHover}
     }
 
     a:hover {
       transform: translateY(-2px);
       border-color: ${({ theme }) => theme.colors.accent};
     }
+  }
+
+  .certificates-area {
+    ${revealable}
   }
 
   .certificate-box {
@@ -95,18 +132,12 @@ export const StyledProjectsPage = styled.main`
     }
   }
 
-  .arrowUp,
-  .arrowDown {
-    animation: rotation ease 1s;
+  .module-arrow {
+    transition: transform ${({ theme }) => theme.transitions.base};
   }
 
-  @keyframes rotation {
-    0% {
-      transform: rotate(-180deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+  button[aria-expanded='true'] .module-arrow {
+    transform: rotate(180deg);
   }
 
   @media (max-width: 690px) {
@@ -136,9 +167,11 @@ export const ModuleButton = styled.button<{ $active: boolean; $hidden?: boolean 
   color: ${({ theme, $active }) => ($active ? theme.colors.accent : theme.colors.text)};
   font-size: 15px;
   text-align: left;
+  transform: ${({ $active }) => ($active ? 'translateY(-2px)' : 'translateY(0)')};
   transition: background-color ${({ theme }) => theme.transitions.base},
     border-color ${({ theme }) => theme.transitions.base},
-    color ${({ theme }) => theme.transitions.base};
+    color ${({ theme }) => theme.transitions.base},
+    transform ${({ theme }) => theme.transitions.base};
 
   .module-label {
     display: flex;

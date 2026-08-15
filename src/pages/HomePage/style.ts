@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import { enter, fadeUp, floatY, gradientShift, halo, sheenOnHover } from '../../styles/motion';
+
+/** Mesma curva usada em `theme.transitions` e nos helpers de `motion.ts`. */
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
 export const StyledHomePage = styled.main`
   display: flex;
@@ -15,15 +19,29 @@ export const StyledHomePage = styled.main`
       font-size: clamp(32px, 5vw, 56px);
       line-height: 1.15;
       letter-spacing: -0.02em;
+      ${enter(0)}
     }
 
     @supports (background-clip: text) or (-webkit-background-clip: text) {
       h1 {
         background: ${({ theme }) => theme.gradients.heading};
+        background-size: 200% auto;
+        background-position: 0% 50%;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
+
+        /*
+          O shorthand precisa declarar entrada e brilho juntos, senão um
+          sobrescreve o outro — e por isso ele tem que ficar dentro do gate:
+          ungated, ele venceria o ${'`enter()`'} protegido e deixaria o título
+          preso em opacity 0 para quem pediu movimento reduzido.
+        */
+        @media (prefers-reduced-motion: no-preference) {
+          animation: ${fadeUp} 700ms ${EASE} both, ${gradientShift} 8s ease-in-out infinite;
+          animation-delay: 0ms, 700ms;
+        }
       }
     }
 
@@ -34,6 +52,7 @@ export const StyledHomePage = styled.main`
       font-size: 17px;
       line-height: 1.7;
       max-width: 65ch;
+      ${enter(100)}
     }
   }
 
@@ -68,13 +87,23 @@ export const StyledHomePage = styled.main`
       background: radial-gradient(circle, ${({ theme }) => theme.colors.accentGlow} 0%, transparent 70%);
       filter: blur(40px);
       z-index: 0;
+      opacity: 0.55;
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: ${halo} 6s ease-in-out infinite;
+      }
     }
 
     img {
       position: relative;
       z-index: 1;
       max-height: 250px;
-      animation: imgMove 4s ease-in-out infinite;
+
+      /* entrada (fadeUp), depois o float contínuo assume (transform apenas, sem reflow) */
+      @media (prefers-reduced-motion: no-preference) {
+        animation: ${fadeUp} 700ms ${EASE} both, ${floatY} 4s ease-in-out infinite;
+        animation-delay: 400ms, 1100ms;
+      }
     }
   }
 
@@ -84,6 +113,7 @@ export const StyledHomePage = styled.main`
     justify-content: flex-start;
     gap: 14px;
     margin-top: 28px;
+    ${enter(200)}
 
     a {
       display: flex;
@@ -110,7 +140,7 @@ export const StyledHomePage = styled.main`
         border-color: ${({ theme }) => theme.colors.accent};
         background-color: ${({ theme }) => theme.colors.surfaceHover};
         box-shadow: ${({ theme }) => theme.shadows.glow};
-        transform: translateY(-2px);
+        transform: translateY(-3px);
 
         svg {
           color: ${({ theme }) => theme.colors.accent};
@@ -131,6 +161,8 @@ export const StyledHomePage = styled.main`
     border-radius: ${({ theme }) => theme.radii.pill};
     background-color: ${({ theme }) => theme.colors.surface};
     border: 1px solid ${({ theme }) => theme.colors.border};
+    ${enter(300)}
+    ${sheenOnHover}
 
     p {
       font-weight: 600;
@@ -147,7 +179,9 @@ export const StyledHomePage = styled.main`
       border-radius: ${({ theme }) => theme.radii.sm};
       padding: 5px 9px;
       transition: color ${({ theme }) => theme.transitions.fast},
-        background-color ${({ theme }) => theme.transitions.fast};
+        background-color ${({ theme }) => theme.transitions.fast},
+        box-shadow ${({ theme }) => theme.transitions.fast},
+        transform ${({ theme }) => theme.transitions.fast};
 
       svg {
         height: 16px;
@@ -158,18 +192,8 @@ export const StyledHomePage = styled.main`
     a:hover {
       color: ${({ theme }) => theme.colors.accent};
       background-color: ${({ theme }) => theme.colors.surfaceHover};
-    }
-  }
-
-  @keyframes imgMove {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-14px);
-    }
-    100% {
-      transform: translateY(0);
+      box-shadow: ${({ theme }) => theme.shadows.glow};
+      transform: translateY(-3px);
     }
   }
 

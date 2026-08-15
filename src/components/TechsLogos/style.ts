@@ -1,10 +1,38 @@
 import styled from 'styled-components';
+import { fadeUp } from '../../styles/motion';
 
+/** Mesma curva usada nos helpers de `styles/motion.ts` e em `theme.transitions`. */
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+/**
+ * O `data-reveal` de `useReveal` é escrito no `<aside>` que envolve esta grade
+ * (ver `HomePage/index.tsx`), não neste componente — `TechsLogos/index.tsx` é
+ * fronteira alheia e não pode receber a ref. Por isso o seletor abaixo procura
+ * o atributo num ancestral (`[data-reveal='shown'] &`) em vez de usar
+ * `revealStagger` de `motion.ts`, que assume o atributo no próprio elemento.
+ */
 export const StyledTechsLogos = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
   gap: 16px;
+
+  [data-reveal='hidden'] & .tech-box {
+    opacity: 0;
+  }
+
+  [data-reveal='shown'] & .tech-box {
+    animation: ${fadeUp} 600ms ${EASE} both;
+  }
+
+  ${Array.from(
+    { length: 16 },
+    (_, i) => `
+    [data-reveal='shown'] & .tech-box:nth-child(${i + 1}) {
+      animation-delay: ${i * 55}ms;
+    }
+  `
+  ).join('')}
 
   .tech-box {
     aspect-ratio: 1;
