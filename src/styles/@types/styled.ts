@@ -1,30 +1,11 @@
 import 'styled-components';
 
-declare module 'styled-components';
-export interface IDefaultTheme {
-  fonts: {
-    primary: string;
-  };
-  colors: {
-    primary: string;
-    primaryFocus: string;
+import type { MainTheme } from '../theme';
 
-    secondary: string;
-
-    grey400: string;
-    grey300: string;
-    grey200: string;
-    grey100: string;
-    grey00: string;
-
-    white: string;
-    black: string;
-
-    feedbacks: {
-      negative: string;
-      warning: string;
-      success: string;
-      information: string;
-    };
-  };
+/**
+ * Tipa o `theme` das template literals a partir do próprio objeto do tema.
+ * Token inexistente vira erro de build em vez de `undefined` silencioso no CSS.
+ */
+declare module 'styled-components' {
+  export interface DefaultTheme extends MainTheme {}
 }

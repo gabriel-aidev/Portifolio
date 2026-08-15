@@ -1,15 +1,17 @@
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 
 import { Slider, Slide, SliderProps } from '../..';
+import DateBadge from '../../../DateBadge';
 import { projectsList } from './projectsList';
 import { StyledArticle } from './style';
 
-export function MainProjectsSlider({}) {
+const prefersReducedMotion =
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+export function MainProjectsSlider() {
   const settings: SliderProps = {
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: true,
-    },
+    autoplay: prefersReducedMotion ? false : { delay: 4000, disableOnInteraction: true },
     spaceBetween: 50,
     navigation: true,
     pagination: {
@@ -29,16 +31,32 @@ export function MainProjectsSlider({}) {
             <StyledArticle>
               <video controls src={project.video} poster={project.thumbnail}></video>
               <aside>
-                <h2>{project.name}</h2>
-                <p dangerouslySetInnerHTML={{ __html: project.description }}></p>
-                <span>
+                <div className='project-header'>
+                  <h2>{project.name}</h2>
+                  <DateBadge date={project.date} />
+                </div>
+                <p
+                  className='project-description'
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                ></p>
+                <span className='project-links'>
                   {project.deploy && (
-                    <a href={project.deploy} target='_blank'>
+                    <a
+                      className='deploy-link'
+                      href={project.deploy}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
                       <FaGlobe /> Acesse o site
                     </a>
                   )}
                   {project.repository && (
-                    <a href={project.repository} target='_blank'>
+                    <a
+                      className='repo-link'
+                      href={project.repository}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
                       <FaGithub /> Ver repositório
                     </a>
                   )}

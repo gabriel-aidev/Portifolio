@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 import { mainTheme } from '../../styles/theme';
+import { enter } from '../../styles/motion';
 
 export const StyledHeader = styled.header`
   position: fixed;
   z-index: 10;
   width: 100%;
-  background-color: ${mainTheme.colors.black};
+  background-color: rgba(9, 12, 10, 0.72);
+  border-bottom: 1px solid ${mainTheme.colors.border};
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  ${enter(0, 500)}
+
   .header {
     width: 100%;
     padding: 13px 0;
@@ -17,12 +23,17 @@ export const StyledHeader = styled.header`
       display: flex;
       align-items: center;
       gap: 13px;
-      h2 {
-        font-family: ${mainTheme.fonts.primary};
+      ${enter(120)}
+
+      .logo-name {
         font-weight: 700;
         font-size: 23px;
-        text-align: center;
-        color: ${mainTheme.colors.grey100};
+        color: ${mainTheme.colors.text};
+        transition: color ${mainTheme.transitions.fast};
+      }
+
+      &:hover .logo-name {
+        color: ${mainTheme.colors.accent};
       }
     }
 
@@ -30,20 +41,56 @@ export const StyledHeader = styled.header`
       display: none;
       align-items: center;
       gap: 25px;
+
+      li {
+        ${enter(180)}
+
+        &:nth-child(2) {
+          animation-delay: 240ms;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 300ms;
+        }
+      }
+
       a {
-        color: ${mainTheme.colors.grey200};
+        position: relative;
+        color: ${mainTheme.colors.textMuted};
         font-size: 20px;
         font-weight: 400;
-      }
-      a:hover {
-        text-decoration: underline;
-        text-decoration-color: ${mainTheme.colors.secondary00};
-        text-underline-offset: 7px;
+        padding-bottom: 4px;
+        transition: color ${mainTheme.transitions.fast};
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0%;
+          height: 2px;
+          background: ${mainTheme.colors.accent};
+          transition: width ${mainTheme.transitions.base};
+        }
+
+        &:hover {
+          color: ${mainTheme.colors.text};
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &.active {
+          color: ${mainTheme.colors.accent};
+        }
+
+        &.active::after {
+          width: 100%;
+        }
       }
     }
 
-    #mobile-menu {
-    }
   }
 
   @media (min-width: 620px) {
@@ -59,7 +106,7 @@ export const StyledHeader = styled.header`
   @media (max-width: 350px) {
     .header {
       .logo-box {
-        h2 {
+        .logo-name {
           font-size: 18px;
         }
       }
@@ -76,11 +123,11 @@ export const StyledHeader = styled.header`
 
   .bm-burger-bars {
     border-radius: 50px;
-    background: ${mainTheme.colors.grey100};
+    background: ${mainTheme.colors.text};
   }
 
   .bm-burger-bars-hover {
-    background: ${mainTheme.colors.secondary00};
+    background: ${mainTheme.colors.accent};
   }
 
   .bm-cross-button {
@@ -89,7 +136,7 @@ export const StyledHeader = styled.header`
   }
 
   .bm-cross {
-    background: ${mainTheme.colors.grey100};
+    background: ${mainTheme.colors.text};
   }
 
   .bm-menu-wrap {
@@ -99,27 +146,28 @@ export const StyledHeader = styled.header`
   }
 
   .bm-menu {
-    background: ${mainTheme.colors.secondary400};
+    background: ${mainTheme.colors.surfaceSolid};
     padding: 2.5em 1.5em 0;
     font-size: 20px;
   }
 
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-
   .bm-item-list {
-    color: #b8b7ad;
+    color: ${mainTheme.colors.text};
     padding: 20px;
   }
 
   .bm-item {
     margin-top: 20px;
-    color: #b8b7ad;
+    color: ${mainTheme.colors.text};
     padding-left: 50px;
+    transition: color ${mainTheme.transitions.fast};
+
+    &:hover {
+      color: ${mainTheme.colors.accent};
+    }
   }
 
   .bm-overlay {
-    background-color: rgba(0, 0, 0, 0.9) !important;
+    background-color: rgba(9, 12, 10, 0.88) !important;
   }
 `;
