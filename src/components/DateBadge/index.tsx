@@ -37,6 +37,8 @@ export interface DateBadgeProps {
   date: string;
   /** Marca a data como aproximada — repositório indisponível para conferência. */
   estimated?: boolean;
+  /** Projeto em andamento: a data é o início, e o selo lê "desde". */
+  since?: boolean;
   /** Versão reduzida, para cards menores. */
   compact?: boolean;
   className?: string;
@@ -53,13 +55,22 @@ const parse = (date: string) => {
  * Selo com o mês/ano de entrega do projeto.
  * Recebe a data em formato de máquina e cuida sozinho da apresentação em PT-BR.
  */
-const DateBadge = ({ date, estimated = false, compact = false, className }: DateBadgeProps) => {
+const DateBadge = ({
+  date,
+  estimated = false,
+  since = false,
+  compact = false,
+  className,
+}: DateBadgeProps) => {
   const parsed = parse(date);
   if (!parsed) return null;
 
   const { year, index } = parsed;
-  const label = `${MONTHS_SHORT[index]} ${year}`;
-  const title = estimated
+  const short = `${MONTHS_SHORT[index]} ${year}`;
+  const label = since ? `desde ${short}` : short;
+  const title = since
+    ? `Em andamento desde ${MONTHS_LONG[index]} de ${year}`
+    : estimated
     ? `Entrega por volta de ${MONTHS_LONG[index]} de ${year}`
     : `Entregue em ${MONTHS_LONG[index]} de ${year}`;
 
@@ -68,7 +79,7 @@ const DateBadge = ({ date, estimated = false, compact = false, className }: Date
       {/* o conteúdo visível é abreviado; quem lê por leitor de tela recebe só a frase completa */}
       <FiCalendar aria-hidden />
       <time dateTime={date} aria-hidden>
-        {estimated && <span>~</span>}
+        {estimated && !since && <span>~</span>}
         {label}
       </time>
       <span className='sr-only'>{title}</span>

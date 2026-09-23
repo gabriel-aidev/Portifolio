@@ -51,11 +51,11 @@ const contacts: ContactItem[] = [
   },
   {
     key: 'github',
-    href: 'https://github.com/PONGSU',
+    href: 'https://github.com/gabriel-aidev',
     icon: <FaGithub />,
     label: 'GitHub',
-    value: 'PONGSU',
-    copyValue: 'https://github.com/PONGSU',
+    value: 'gabriel-aidev',
+    copyValue: 'https://github.com/gabriel-aidev',
     copyAriaLabel: 'Copiar GitHub',
   },
 ];

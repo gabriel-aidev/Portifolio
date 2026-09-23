@@ -174,7 +174,7 @@ const ProjectsPage = () => {
         </ClickAwayListener>
 
         <div className='github-callout' ref={githubRef}>
-          <Link to='https://github.com/PONGSU' target='_blank' rel='noreferrer'>
+          <Link to='https://github.com/gabriel-aidev' target='_blank' rel='noreferrer'>
             <FaGithub /> Clique aqui para acessar todos meus projetos públicos no GitHub
           </Link>
         </div>

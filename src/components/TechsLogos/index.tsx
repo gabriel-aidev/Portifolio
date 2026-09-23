@@ -1,37 +1,26 @@
-import { styled } from '@mui/material/styles';
-import { Zoom } from '@mui/material';
-import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
-
-import { techList } from './techlist';
+import { techGroups, techPractices } from './techlist';
 import { StyledTechsLogos } from './style';
-
-const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip enterTouchDelay={0} arrow TransitionComponent={Zoom} {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.arrow}`]: {
-    color: '#3DDC5A',
-  },
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: '#3DDC5A',
-    padding: '10px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-}));
 
 const TechsLogos = () => {
   return (
     <StyledTechsLogos>
-      {techList.map((tech) => (
-        <CustomTooltip key={tech.title} title={tech.title}>
-          <div style={{ padding: tech.padding }} className={'tech-box ' + tech.text}>
-            <img src={tech.img} alt={tech.title + ' logo'} />
-            {tech.text && <h4>{tech.text}</h4>}
-          </div>
-        </CustomTooltip>
+      {techGroups.map((group) => (
+        <div className='tech-group' key={group.label}>
+          <h3 className='tech-group-label'>{group.label}</h3>
+          <ul className='tech-grid'>
+            {group.items.map((tech) => {
+              const Icon = tech.icon;
+              return (
+                <li className='tech-box' key={tech.title}>
+                  <Icon aria-hidden />
+                  <span>{tech.title}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       ))}
+      <p className='tech-practices'>Também no dia a dia: {techPractices.join(', ')}.</p>
     </StyledTechsLogos>
   );
 };
