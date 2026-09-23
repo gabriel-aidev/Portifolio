@@ -17,7 +17,7 @@ export type StoryFigureId =
 
 export interface StoryStep {
   id: string;
-  /** Rótulo do período, já em texto: "2010 a 2014", "Hoje". */
+  /** Rótulo do período, já em texto: "2007 a 2014", "Hoje". */
   period: string;
   title: string;
   paragraphs: string[];
@@ -27,7 +27,7 @@ export interface StoryStep {
 export const storySteps: StoryStep[] = [
   {
     id: 'servidores',
-    period: '2010 a 2014',
+    period: '2007 a 2014',
     title: 'Servidores de jogo e primeiras automações',
     figure: 'servers',
     paragraphs: [

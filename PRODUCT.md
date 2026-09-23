@@ -20,7 +20,7 @@ Desenvolvedor fullstack e engenheiro de IA aplicada que construiu, sozinho e com
 
 ## Operating Context
 
-- Trajetória confirmada pelo Gabriel em 2026-09-23: automações e servidores de jogo na adolescência (2010 a 2014, cerca de 100 usuários); faculdade de psicologia interrompida pela pandemia em 2020; Sleep Bomb (2020 a 2021), automação para um jogo NFT com mais de mil usuários, encerrada quando o jogo foi descontinuado; Kenzie Academy Brasil de julho de 2022 a meados de 2023 (front-end, Node/TypeORM, Python/Django); primeiro freelance em agosto de 2023 (Controle de Pontos); entregador numa operação de última milha em São Paulo desde o fim de 2023, função que mantém; Donaldo OPS a partir de junho de 2026, em produção; Revela a partir de setembro de 2026.
+- Trajetória confirmada pelo Gabriel em 2026-09-23: automações e servidores de jogo na adolescência (2007 a 2014, cerca de 100 usuários); faculdade de psicologia interrompida pela pandemia em 2020; Sleep Bomb (2020 a 2021), automação para um jogo NFT com mais de mil usuários, encerrada quando o jogo foi descontinuado; Kenzie Academy Brasil de julho de 2022 a meados de 2023 (front-end, Node/TypeORM, Python/Django); primeiro freelance em agosto de 2023 (Controle de Pontos); entregador numa operação de última milha em São Paulo desde o fim de 2023, função que mantém; Donaldo OPS a partir de junho de 2026, em produção; Revela a partir de setembro de 2026.
 - Donaldo OPS e Revela são de propriedade do Gabriel; a operação usa o Donaldo por contrato. O código dos dois é privado e não deve ser linkado.
 - Hospedagem na Vercel, deploy automático a cada merge na `main` de `github.com/gabriel-aidev/Portifolio`.
 
