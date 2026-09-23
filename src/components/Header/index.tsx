@@ -25,6 +25,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
+              <Link className={isActive('/sobre') ? 'active' : ''} to={'/sobre'}>
+                Sobre
+              </Link>
+            </li>
+            <li>
               <Link className={isActive('/projetos') ? 'active' : ''} to={'/projetos'}>
                 Projetos
               </Link>
@@ -40,6 +45,9 @@ const Header = () => {
       <Menu id='mobile-menu'>
         <Link className='menu-item' to={'/'}>
           Início
+        </Link>
+        <Link className='menu-item' to={'/sobre'}>
+          Sobre
         </Link>
         <Link className='menu-item' to={'/projetos'}>
           Projetos

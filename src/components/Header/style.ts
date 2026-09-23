@@ -4,6 +4,8 @@ import { enter } from '../../styles/motion';
 
 export const StyledHeader = styled.header`
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
   width: 100%;
   background-color: rgba(9, 12, 10, 0.72);
@@ -51,6 +53,10 @@ export const StyledHeader = styled.header`
 
         &:nth-child(3) {
           animation-delay: 300ms;
+        }
+
+        &:nth-child(4) {
+          animation-delay: 360ms;
         }
       }
 
