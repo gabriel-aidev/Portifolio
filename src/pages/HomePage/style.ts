@@ -1,5 +1,12 @@
 import styled from 'styled-components';
-import { enter, fadeUp, floatY, gradientShift, halo, sheenOnHover } from '../../styles/motion';
+import {
+  enter,
+  fadeUp,
+  floatY,
+  gradientShift,
+  halo,
+  revealStagger,
+} from '../../styles/motion';
 
 /** Mesma curva usada em `theme.transitions` e nos helpers de `motion.ts`. */
 const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
@@ -54,9 +61,37 @@ export const StyledHomePage = styled.main`
       max-width: 65ch;
       ${enter(100)}
     }
+
+    .hero-anchor {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.colors.textMuted};
+      transition: color ${({ theme }) => theme.transitions.fast};
+      ${enter(150)}
+
+      svg {
+        width: 15px;
+        height: 15px;
+        color: ${({ theme }) => theme.colors.accent};
+        transition: transform ${({ theme }) => theme.transitions.base};
+      }
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.text};
+
+        svg {
+          transform: translateY(3px);
+        }
+      }
+    }
   }
 
-  section {
+  .hero {
     margin-top: 85px;
     padding-top: 50px;
     margin-bottom: 40px;
@@ -64,6 +99,27 @@ export const StyledHomePage = styled.main`
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+  }
+
+  .practice-area {
+    margin: 30px 0 80px;
+    /* o header é fixo: a âncora precisa parar abaixo dele */
+    scroll-margin-top: 100px;
+    ${revealStagger('article', 2, 140)}
+  }
+
+  .practice-intro {
+    margin: 18px 0 28px;
+    max-width: 65ch;
+    font-size: 16px;
+    line-height: 1.7;
+    color: ${({ theme }) => theme.colors.textMuted};
+  }
+
+  .practice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .img-area {
@@ -149,54 +205,6 @@ export const StyledHomePage = styled.main`
     }
   }
 
-  .curriculum-box {
-    margin-top: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    width: fit-content;
-    max-width: 100%;
-    padding: 10px 16px;
-    border-radius: ${({ theme }) => theme.radii.pill};
-    background-color: ${({ theme }) => theme.colors.surface};
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    ${enter(300)}
-    ${sheenOnHover}
-
-    p {
-      font-weight: 600;
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.text};
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.textMuted};
-      border-radius: ${({ theme }) => theme.radii.sm};
-      padding: 5px 9px;
-      transition: color ${({ theme }) => theme.transitions.fast},
-        background-color ${({ theme }) => theme.transitions.fast},
-        box-shadow ${({ theme }) => theme.transitions.fast},
-        transform ${({ theme }) => theme.transitions.fast};
-
-      svg {
-        height: 16px;
-        width: 16px;
-      }
-    }
-
-    a:hover {
-      color: ${({ theme }) => theme.colors.accent};
-      background-color: ${({ theme }) => theme.colors.surfaceHover};
-      box-shadow: ${({ theme }) => theme.shadows.glow};
-      transform: translateY(-3px);
-    }
-  }
-
   aside {
     margin-bottom: 60px;
 
@@ -214,9 +222,13 @@ export const StyledHomePage = styled.main`
   }
 
   @media (max-width: 700px) {
-    section {
+    .hero {
       padding-top: 80px;
       flex-direction: column;
+    }
+
+    .practice-area {
+      margin: 10px 0 60px;
     }
 
     .title-area {

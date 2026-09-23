@@ -39,6 +39,92 @@ export const StyledArticle = styled.article`
     transform: scale(1.01);
   }
 
+  /* mesma moldura para a capa tipográfica e para os clipes em retrato */
+  .project-cover,
+  .project-clips {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    max-height: 460px;
+    overflow: hidden;
+    border-radius: ${({ theme }) => theme.radii.md};
+    border: 1px solid ${({ theme }) => theme.colors.border};
+    background-color: ${({ theme }) => theme.colors.bgSoft};
+    background-image: radial-gradient(
+        28rem 20rem at 100% 0%,
+        ${({ theme }) => theme.colors.accentGlow},
+        transparent 65%
+      ),
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: auto, 28px 28px, 28px 28px;
+    background-position: 0 0, -1px -1px, -1px -1px;
+  }
+
+  /* capa tipográfica para projetos privados, sem vídeo público */
+  .project-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px;
+  }
+
+  /* dois clipes 9:16 lado a lado; a largura garante que cabem na moldura 16:10 */
+  .project-clips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+
+    video {
+      width: min(34%, 240px);
+      max-height: none;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: ${({ theme }) => theme.radii.md};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      background-color: ${({ theme }) => theme.colors.bgSoft};
+      box-shadow: ${({ theme }) => theme.shadows.card};
+    }
+  }
+
+  &:hover .project-clips video {
+    transform: none;
+  }
+
+  .cover-name {
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: ${({ theme }) => theme.colors.text};
+  }
+
+  .cover-tagline {
+    margin-top: 10px;
+    max-width: 30ch;
+    font-size: 15px;
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.textMuted};
+  }
+
+  .cover-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    li {
+      padding: 4px 10px;
+      border-radius: ${({ theme }) => theme.radii.pill};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      background-color: ${({ theme }) => theme.colors.surface};
+      color: ${({ theme }) => theme.colors.textMuted};
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
   aside {
     display: flex;
     flex-direction: column;
@@ -129,6 +215,20 @@ export const StyledArticle = styled.article`
 
     video {
       max-height: 340px;
+    }
+
+    .project-cover,
+    .project-clips {
+      max-height: 340px;
+    }
+
+    .project-cover {
+      padding: 22px;
+    }
+
+    .project-clips {
+      padding: 14px;
+      gap: 12px;
     }
 
     .project-description {
