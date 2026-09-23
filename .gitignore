@@ -26,5 +26,6 @@ dist-ssr
 
 .vercel
 
-# cache do hook de design do Impeccable
-.impeccable
+# cache e capturas do Impeccable; briefs, design.json e config ficam versionados
+.impeccable/hook.cache.json
+.impeccable/review/

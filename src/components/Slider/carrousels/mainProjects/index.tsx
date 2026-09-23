@@ -1,15 +1,86 @@
+import { useRef, useState } from 'react';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
-import { FiBookOpen } from 'react-icons/fi';
+import { FiBookOpen, FiVolume2, FiVolumeX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import { Slider, Slide, SliderProps } from '../..';
 import DateBadge from '../../../DateBadge';
-import { projectsList } from './projectsList';
+import { FeaturedClip, projectsList } from './projectsList';
 import { StyledArticle } from './style';
 
 const prefersReducedMotion =
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+interface ClipProps {
+  clip: FeaturedClip;
+  muted: boolean;
+  onToggle: (video: HTMLVideoElement | null) => void;
+}
+
+function Clip({ clip, muted, onToggle }: ClipProps) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  return (
+    <div className='clip'>
+      <video
+        ref={ref}
+        src={clip.src}
+        poster={clip.poster}
+        aria-label={clip.label}
+        muted={muted}
+        loop
+        playsInline
+        preload='metadata'
+        /* quem pediu movimento reduzido vê o pôster e decide se dá play */
+        autoPlay={!prefersReducedMotion}
+        controls={prefersReducedMotion}
+      />
+      <button
+        type='button'
+        className='clip-sound'
+        aria-pressed={!muted}
+        aria-label={muted ? 'Ativar som do vídeo' : 'Silenciar vídeo'}
+        title={muted ? 'Ativar som' : 'Silenciar'}
+        onClick={() => onToggle(ref.current)}
+      >
+        {muted ? <FiVolumeX aria-hidden /> : <FiVolume2 aria-hidden />}
+      </button>
+    </div>
+  );
+}
+
+/**
+ * Par de clipes ilustrativos em loop. Nascem mudos porque o navegador não
+ * deixa tocar som sem gesto do usuário. O som é um estado do par: ligar num
+ * clipe silencia o outro, e o carrossel para de avançar para a pessoa ouvir.
+ */
+function ProjectClips({ clips }: { clips: FeaturedClip[] }) {
+  const [soundOn, setSoundOn] = useState<number | null>(null);
+
+  const toggle = (index: number, video: HTMLVideoElement | null) => {
+    const turningOn = soundOn !== index;
+    setSoundOn(turningOn ? index : null);
+    if (!turningOn || !video) return;
+
+    const swiper = (video.closest('.swiper') as (Element & { swiper?: any }) | null)?.swiper;
+    swiper?.autoplay?.stop();
+    if (video.paused) void video.play().catch(() => undefined);
+  };
+
+  return (
+    <div className='project-clips'>
+      {clips.map((clip, index) => (
+        <Clip
+          key={clip.src}
+          clip={clip}
+          muted={soundOn !== index}
+          onToggle={(video) => toggle(index, video)}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function MainProjectsSlider() {
   const settings: SliderProps = {
@@ -32,23 +103,7 @@ export function MainProjectsSlider() {
           <Slide key={index}>
             <StyledArticle>
               {project.clips ? (
-                <div className='project-clips'>
-                  {project.clips.map((clip) => (
-                    <video
-                      key={clip.src}
-                      src={clip.src}
-                      poster={clip.poster}
-                      aria-label={clip.label}
-                      muted
-                      loop
-                      playsInline
-                      preload='metadata'
-                      /* quem pediu movimento reduzido vê o pôster e decide se dá play */
-                      autoPlay={!prefersReducedMotion}
-                      controls={prefersReducedMotion}
-                    />
-                  ))}
-                </div>
+                <ProjectClips clips={project.clips} />
               ) : project.video ? (
                 <video controls src={project.video} poster={project.thumbnail}></video>
               ) : (

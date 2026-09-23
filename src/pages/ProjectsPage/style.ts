@@ -4,7 +4,8 @@ import { revealable, revealStagger, sheenOnHover } from '../../styles/motion';
 
 export const StyledProjectsPage = styled.main`
   .projects-container {
-    padding-top: 85px;
+    /* 85px do cabeçalho fixo mais respiro para o título não encostar nele */
+    padding-top: 125px;
   }
 
   .featured-projects-section {

@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T00:00:00Z",
+  "title": "Design System: Gabriel Maciel - Portfólio",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Signal Green", "canonical": "#3DDC5A", "tonalRamp": ["oklch(20% 0.06 145)", "oklch(30% 0.09 145)", "oklch(42% 0.13 145)", "oklch(55% 0.17 145)", "oklch(68% 0.20 145)", "oklch(79% 0.22 145)", "oklch(88% 0.15 145)", "oklch(95% 0.07 145)"] },
+      "accent-deep": { "role": "primary", "displayName": "Moss Well", "canonical": "#14361F", "tonalRamp": ["oklch(16% 0.04 150)", "oklch(22% 0.05 150)", "oklch(30% 0.06 150)", "oklch(40% 0.07 150)", "oklch(52% 0.08 150)", "oklch(65% 0.09 150)", "oklch(80% 0.08 150)", "oklch(93% 0.04 150)"] },
+      "accent-glow": { "role": "primary", "displayName": "Green Haze", "canonical": "rgba(61, 220, 90, 0.25)", "tonalRamp": ["rgba(61,220,90,0.06)", "rgba(61,220,90,0.10)", "rgba(61,220,90,0.18)", "rgba(61,220,90,0.22)", "rgba(61,220,90,0.25)", "rgba(61,220,90,0.28)", "rgba(61,220,90,0.35)", "rgba(61,220,90,0.45)"] },
+      "border-strong": { "role": "primary", "displayName": "Strong Hairline", "canonical": "rgba(61, 220, 90, 0.35)", "tonalRamp": ["rgba(61,220,90,0.06)", "rgba(61,220,90,0.10)", "rgba(61,220,90,0.18)", "rgba(61,220,90,0.22)", "rgba(61,220,90,0.25)", "rgba(61,220,90,0.28)", "rgba(61,220,90,0.35)", "rgba(61,220,90,0.45)"] },
+      "bg": { "role": "neutral", "displayName": "Depot Black", "canonical": "#090C0A", "tonalRamp": ["oklch(12% 0.008 150)", "oklch(15% 0.008 150)", "oklch(20% 0.008 150)", "oklch(30% 0.008 150)", "oklch(45% 0.008 150)", "oklch(62% 0.008 150)", "oklch(80% 0.008 150)", "oklch(94% 0.006 150)"] },
+      "bg-soft": { "role": "neutral", "displayName": "Depot Black Soft", "canonical": "#0E120F", "tonalRamp": ["oklch(12% 0.008 150)", "oklch(15% 0.008 150)", "oklch(20% 0.008 150)", "oklch(30% 0.008 150)", "oklch(45% 0.008 150)", "oklch(62% 0.008 150)", "oklch(80% 0.008 150)", "oklch(94% 0.006 150)"] },
+      "surface": { "role": "neutral", "displayName": "Breath Surface", "canonical": "rgba(255, 255, 255, 0.035)", "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.035)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.09)", "rgba(255,255,255,0.14)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.85)"] },
+      "surface-hover": { "role": "neutral", "displayName": "Breath Surface Hover", "canonical": "rgba(255, 255, 255, 0.06)", "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.035)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.09)", "rgba(255,255,255,0.14)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.85)"] },
+      "surface-solid": { "role": "neutral", "displayName": "Solid Slate", "canonical": "#141915", "tonalRamp": ["oklch(12% 0.008 150)", "oklch(15% 0.008 150)", "oklch(20% 0.008 150)", "oklch(30% 0.008 150)", "oklch(45% 0.008 150)", "oklch(62% 0.008 150)", "oklch(80% 0.008 150)", "oklch(94% 0.006 150)"] },
+      "border": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(255, 255, 255, 0.09)", "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.035)", "rgba(255,255,255,0.06)", "rgba(255,255,255,0.09)", "rgba(255,255,255,0.14)", "rgba(255,255,255,0.25)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.85)"] },
+      "text": { "role": "neutral", "displayName": "Paper", "canonical": "#E8EDE9", "tonalRamp": ["oklch(15% 0.01 150)", "oklch(28% 0.01 150)", "oklch(40% 0.012 150)", "oklch(53% 0.014 150)", "oklch(64% 0.014 150)", "oklch(74% 0.012 150)", "oklch(86% 0.01 150)", "oklch(94% 0.008 150)"] },
+      "text-muted": { "role": "neutral", "displayName": "Ash", "canonical": "#9AA69D", "tonalRamp": ["oklch(15% 0.01 150)", "oklch(28% 0.01 150)", "oklch(40% 0.012 150)", "oklch(53% 0.014 150)", "oklch(64% 0.014 150)", "oklch(74% 0.012 150)", "oklch(86% 0.01 150)", "oklch(94% 0.008 150)"] },
+      "text-faint": { "role": "neutral", "displayName": "Dust", "canonical": "#6B776F", "tonalRamp": ["oklch(15% 0.01 150)", "oklch(28% 0.01 150)", "oklch(40% 0.012 150)", "oklch(53% 0.014 150)", "oklch(64% 0.014 150)", "oklch(74% 0.012 150)", "oklch(86% 0.01 150)", "oklch(94% 0.008 150)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page h1 (home hero, /sobre). Home may wear the heading gradient via background-clip: text." },
+      "display-numeric": { "displayName": "Display Numeric", "purpose": "Sticky story-panel period and private-project cover name; tabular numerals." },
+      "headline": { "displayName": "Headline", "purpose": "Case-study h3 with text-wrap: balance." },
+      "title": { "displayName": "Title", "purpose": "Section titles with trailing hairline; story step h2." },
+      "subtitle": { "displayName": "Subtitle", "purpose": "Project card h2; header logotype at 23px/700." },
+      "body-lead": { "displayName": "Body Lead", "purpose": "Intro paragraph under an h1, text-muted, max 65-70ch." },
+      "body": { "displayName": "Body", "purpose": "Case summaries and story steps, max 60-70ch." },
+      "body-small": { "displayName": "Body Small", "purpose": "Card descriptions, taglines, practice notes." },
+      "nav": { "displayName": "Nav", "purpose": "Desktop nav links and mobile drawer items." },
+      "control": { "displayName": "Control", "purpose": "Pill button and module button text." },
+      "chip": { "displayName": "Chip", "purpose": "Tags, date badge, tech tile names." },
+      "label": { "displayName": "Label", "purpose": "Uppercase group heading inside cards and the tech grid; never a kicker above a title." },
+      "caption": { "displayName": "Caption", "purpose": "Role lines, contact labels, fact rows, copy feedback." }
+    },
+    "gradients": [
+      { "name": "heading", "value": "linear-gradient(120deg, #F2F7F3 0%, #A1CCA5 45%, #3DDC5A 100%)", "purpose": "Home hero h1 via background-clip: text; background-size 200% with an 8s gradientShift." },
+      { "name": "hairline", "value": "linear-gradient(90deg, transparent 0%, rgba(61,220,90,0.45) 50%, transparent 100%)", "purpose": "1px trailing rule after SectionTitle." },
+      { "name": "page-glows", "value": "radial-gradient(60rem 40rem at 12% -10%, rgba(61,220,90,0.10), transparent 60%), radial-gradient(45rem 35rem at 105% 8%, rgba(65,93,67,0.22), transparent 62%), radial-gradient(50rem 40rem at 50% 110%, rgba(61,220,90,0.06), transparent 65%)", "purpose": "Fixed body background over bg; the corner light of the world." },
+      { "name": "panel-grid", "value": "radial-gradient(28rem 20rem at 100% 0%, rgba(61,220,90,0.25), transparent 65%), linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: auto, 28px 28px, 28px 28px; background-position: 0 0, -1px -1px, -1px -1px", "purpose": "Illustration panels and private-project covers over bg-soft." }
+    ],
+    "shadows": [
+      { "name": "soft", "value": "0 2px 12px rgba(0, 0, 0, 0.35)", "purpose": "Resting text cards (case study, course panel)." },
+      { "name": "card", "value": "0 12px 32px rgba(0, 0, 0, 0.45)", "purpose": "Resting media cards, story panel, contact card, portrait clips." },
+      { "name": "glow", "value": "0 0 0 1px rgba(61, 220, 90, 0.35), 0 12px 36px rgba(61, 220, 90, 0.18)", "purpose": "Hover / focus-within only: project cards, icon pills, contact rows." },
+      { "name": "focus-ring", "value": "outline: 2px solid #3DDC5A; outline-offset: 3px; border-radius: 8px", "purpose": "Global :focus-visible." },
+      { "name": "dot-ring", "value": "0 0 0 5px rgba(61, 220, 90, 0.25)", "purpose": "Active story step dot." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The only easing; used by theme.transitions and every motion helper." },
+      { "name": "transition-fast", "value": "160ms cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Colour, border and small lifts on hover." },
+      { "name": "transition-base", "value": "280ms cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Card hover, nav underline growth, tile lift, step text colour." },
+      { "name": "transition-slow", "value": "460ms cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Story figure cross-fade, course panel entrance." },
+      { "name": "enter", "value": "fadeUp (translateY(18px) to 0, opacity 0 to 1) 700ms both, per-element delay 0-400ms", "purpose": "Above-the-fold entrances on mount; gated by prefers-reduced-motion: no-preference." },
+      { "name": "reveal-stagger", "value": "fadeUp 600ms both, 70-140ms per child", "purpose": "In-viewport reveals via useReveal data-reveal attribute." },
+      { "name": "sheen-sweep", "value": "translateX(-120%) to translateX(220%) 750ms; 40%-wide rgba(255,255,255,0.14) band", "purpose": "Hover sheen on primary pill buttons." },
+      { "name": "figure-draw", "value": "stroke-dashoffset 1 to 0, 900ms forwards, 55ms per path", "purpose": "Story illustration draw-in when its step is active." },
+      { "name": "rail-fill", "value": "transform scaleY, 120ms linear", "purpose": "Story progress rail." },
+      { "name": "gradient-shift", "value": "background-position 0% to 100% to 0%, 8s ease-in-out infinite", "purpose": "Home hero heading gradient." },
+      { "name": "float-halo", "value": "translateY(-12px) 4s; opacity .55 to .85, scale 1 to 1.12, 6s", "purpose": "Home hero image and its blurred green halo." }
+    ],
+    "breakpoints": [
+      { "name": "logotype", "value": "350px" },
+      { "name": "xs", "value": "480px" },
+      { "name": "case-compact", "value": "600px" },
+      { "name": "nav", "value": "620px" },
+      { "name": "stack", "value": "700px" },
+      { "name": "container-wide", "value": "800px" },
+      { "name": "two-column", "value": "900px" },
+      { "name": "container-cap", "value": "1500px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pill Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Actionable recipe: moss fill, strong green hairline, green text; lifts and brightens its border on hover with a sheen sweep.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ver projetos <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg></a>",
+      "css": ".ds-btn-primary { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; background-color: #14361F; border: 1px solid rgba(61, 220, 90, 0.35); color: #3DDC5A; font-family: Poppins, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1), border-color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary::before { content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 40%; pointer-events: none; background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.14) 50%, transparent 100%); transform: translateX(-120%); } .ds-btn-primary:hover { transform: translateY(-2px); border-color: #3DDC5A; } .ds-btn-primary:hover::before { animation: ds-sheen 750ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:focus-visible { outline: 2px solid #3DDC5A; outline-offset: 3px; } @keyframes ds-sheen { from { transform: translateX(-120%); } to { transform: translateX(220%); } } @media (prefers-reduced-motion: reduce) { .ds-btn-primary:hover::before { animation: none; } }"
+    },
+    {
+      "name": "Secondary Pill Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Informational recipe as an action: 6% white fill, hairline, paper text; border strengthens on hover.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Falar comigo</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 999px; background-color: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.09); color: #E8EDE9; font-family: Poppins, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1), border-color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { transform: translateY(-2px); border-color: rgba(61, 220, 90, 0.35); } .ds-btn-secondary:focus-visible { outline: 2px solid #3DDC5A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Module Button",
+      "kind": "button",
+      "refersTo": "module-button",
+      "description": "Full-width pill accordion trigger on the Projects page; active state flips to the actionable recipe and stays lifted.",
+      "html": "<button class=\"ds-module\" aria-expanded=\"false\"><span class=\"ds-module-label\"><span class=\"ds-module-title\">Front-end</span><span class=\"ds-module-sub\">React, TypeScript</span></span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg></button><button class=\"ds-module ds-module--active\" aria-expanded=\"true\"><span class=\"ds-module-label\"><span class=\"ds-module-title\">Back-end</span><span class=\"ds-module-sub\">Node, TypeORM</span></span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg></button>",
+      "css": ".ds-module { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; margin-bottom: 14px; padding: 14px 20px; border-radius: 999px; background-color: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.09); color: #E8EDE9; font-family: Poppins, sans-serif; font-size: 15px; text-align: left; cursor: pointer; transition: background-color 280ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms cubic-bezier(0.22, 1, 0.36, 1), color 280ms cubic-bezier(0.22, 1, 0.36, 1), transform 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-module-label { display: flex; flex-direction: column; gap: 2px; } .ds-module-title { font-size: 14px; font-weight: 500; } .ds-module-sub { font-size: 13px; font-weight: 400; color: #9AA69D; } .ds-module svg { flex-shrink: 0; transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-module:hover { border-color: #3DDC5A; } .ds-module--active { background-color: #14361F; border-color: rgba(61, 220, 90, 0.35); color: #3DDC5A; transform: translateY(-2px); } .ds-module--active .ds-module-sub { color: #3DDC5A; } .ds-module--active svg { transform: rotate(180deg); } .ds-module:focus-visible { outline: 2px solid #3DDC5A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Tag Chip and Status Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Informational tag (surface, hairline, ash) beside the actionable status chip (moss, strong hairline, green).",
+      "html": "<span class=\"ds-chip\">NestJS</span> <span class=\"ds-chip\">Prisma</span> <span class=\"ds-chip ds-chip--status\">Em produção</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.09); background-color: rgba(255, 255, 255, 0.035); color: #9AA69D; font-family: Poppins, sans-serif; font-size: 12.5px; font-weight: 500; line-height: 1.3; white-space: nowrap; } .ds-chip--status { padding: 5px 12px; border-color: rgba(61, 220, 90, 0.35); background-color: #14361F; color: #3DDC5A; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; }"
+    },
+    {
+      "name": "Date Badge",
+      "kind": "chip",
+      "refersTo": "badge-date",
+      "description": "Non-clickable dated seal: informational recipe on an 8px radius with a green Feather calendar icon.",
+      "html": "<span class=\"ds-badge\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect><line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line><line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line><line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line></svg><time datetime=\"2026-06\">jun 2026</time></span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.09); background-color: rgba(255, 255, 255, 0.035); color: #9AA69D; font-family: Poppins, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; cursor: default; font-variant-numeric: tabular-nums; transition: border-color 160ms cubic-bezier(0.22, 1, 0.36, 1), color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-badge svg { color: #3DDC5A; flex-shrink: 0; } .ds-badge:hover { border-color: rgba(61, 220, 90, 0.35); color: #E8EDE9; }"
+    },
+    {
+      "name": "Case Study Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Text card: 3.5% surface, hairline, 18px radius, soft shadow; border strengthens on hover; uppercase label heads each inner group.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><div><h3 class=\"ds-card-title\">Donaldo OPS</h3><p class=\"ds-card-tagline\">Operação de última milha, do galpão ao app do motorista.</p><p class=\"ds-card-role\">Produto, API, web e mobile</p></div><span class=\"ds-card-status\">Em produção</span></div><p class=\"ds-card-summary\">Monorepo com API, torre de controle, app do motorista e serviço de WhatsApp.</p><div class=\"ds-card-body\"><h4 class=\"ds-card-label\">Aprendizados</h4><p class=\"ds-card-text\">Requisitos vindos da própria rota, não de tickets.</p></div></article>",
+      "css": ".ds-card { background-color: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 18px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); padding: 32px; font-family: Poppins, sans-serif; color: #E8EDE9; transition: border-color 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-card:hover { border-color: rgba(61, 220, 90, 0.35); } .ds-card-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 16px 28px; } .ds-card-title { margin: 0; font-size: clamp(24px, 3vw, 32px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; } .ds-card-tagline { margin: 6px 0 0; font-size: 16px; line-height: 1.5; color: #9AA69D; } .ds-card-role { margin: 4px 0 0; font-size: 13px; color: #6B776F; } .ds-card-status { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(61, 220, 90, 0.35); background-color: #14361F; color: #3DDC5A; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; } .ds-card-summary { margin: 22px 0 0; max-width: 70ch; font-size: 16px; line-height: 1.7; } .ds-card-body { margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.09); } .ds-card-label { margin: 0 0 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B776F; } .ds-card-text { margin: 0; font-size: 14.5px; line-height: 1.65; color: #9AA69D; }"
+    },
+    {
+      "name": "Grid Panel",
+      "kind": "card",
+      "refersTo": "panel-grid",
+      "description": "Illustration panel: bg-soft with a 28px hairline grid and a green corner glow, tabular period on top, single-stroke figure, caption below.",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-panel-period\">2023 a 2026</div><svg class=\"ds-figure\" viewBox=\"0 0 400 300\" aria-hidden=\"true\"><path class=\"ds-ink\" d=\"M40 240 C 90 240, 110 170, 150 180 S 200 240, 230 210 S 300 120, 360 60\"/><circle class=\"ds-ink\" cx=\"40\" cy=\"240\" r=\"11\"/><circle class=\"ds-ink\" cx=\"150\" cy=\"180\" r=\"11\"/><circle class=\"ds-ink ds-accent\" cx=\"230\" cy=\"210\" r=\"11\"/><rect class=\"ds-ink ds-accent\" x=\"250\" y=\"120\" width=\"56\" height=\"40\" rx=\"6\"/></svg><div class=\"ds-panel-caption\">Na rota</div></div>",
+      "css": ".ds-panel { display: flex; flex-direction: column; padding: 24px 28px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.09); background-color: #0E120F; background-image: radial-gradient(28rem 20rem at 100% 0%, rgba(61, 220, 90, 0.25), transparent 65%), linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px); background-size: auto, 28px 28px, 28px 28px; background-position: 0 0, -1px -1px, -1px -1px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45); font-family: Poppins, sans-serif; color: #9AA69D; max-width: 480px; } .ds-panel-period { font-size: clamp(28px, 3.2vw, 44px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: #E8EDE9; font-variant-numeric: tabular-nums; } .ds-figure { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; margin: 12px 0; } .ds-ink { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; } .ds-accent { stroke: #3DDC5A; } .ds-panel-caption { font-size: 14px; font-weight: 500; }"
+    },
+    {
+      "name": "Tech Tile",
+      "kind": "custom",
+      "refersTo": "tech-tile",
+      "description": "Grid tile with a Simple Icons glyph over a small name; lifts 4px, border goes green and the glyph tints on hover.",
+      "html": "<div class=\"ds-tile\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2L2 7l10 5 10-5-10-5zm0 9L2 16l10 5 10-5-10-5z\"/></svg><span>TypeScript</span></div>",
+      "css": ".ds-tile { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; width: 108px; min-height: 104px; padding: 16px 10px; border-radius: 18px; background-color: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.09); font-family: Poppins, sans-serif; transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms cubic-bezier(0.22, 1, 0.36, 1), background-color 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tile svg { color: #E8EDE9; transition: color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tile span { font-size: 12px; font-weight: 500; line-height: 1.25; text-align: center; color: #9AA69D; transition: color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tile:hover { transform: translateY(-4px); border-color: #3DDC5A; background-color: rgba(255, 255, 255, 0.06); } .ds-tile:hover svg { color: #3DDC5A; } .ds-tile:hover span { color: #E8EDE9; }"
+    },
+    {
+      "name": "Icon Pill",
+      "kind": "button",
+      "refersTo": "icon-pill",
+      "description": "42px circular contact link; glows green and lifts 3px on hover.",
+      "html": "<a class=\"ds-icon-pill\" href=\"#\" aria-label=\"GitHub\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22\"></path></svg></a>",
+      "css": ".ds-icon-pill { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; background-color: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.09); color: #E8EDE9; transition: border-color 280ms cubic-bezier(0.22, 1, 0.36, 1), background-color 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1), transform 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-icon-pill svg { transition: color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-icon-pill:hover { border-color: #3DDC5A; background-color: rgba(255, 255, 255, 0.06); box-shadow: 0 0 0 1px rgba(61, 220, 90, 0.35), 0 12px 36px rgba(61, 220, 90, 0.18); transform: translateY(-3px); color: #3DDC5A; } .ds-icon-pill:focus-visible { outline: 2px solid #3DDC5A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed translucent header with blur; ash links grow a 2px green underline on hover; active link is green.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-logo\">Gabriel Maciel</span><nav class=\"ds-nav\"><a href=\"#\">Início</a><a href=\"#\" class=\"ds-active\">Sobre</a><a href=\"#\">Projetos</a><a href=\"#\">Contato</a></nav></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; height: 85px; padding: 13px 24px; background-color: rgba(9, 12, 10, 0.72); border-bottom: 1px solid rgba(255, 255, 255, 0.09); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-family: Poppins, sans-serif; user-select: none; } .ds-logo { font-size: 23px; font-weight: 700; color: #E8EDE9; transition: color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-logo:hover { color: #3DDC5A; } .ds-nav { display: flex; align-items: center; gap: 25px; } .ds-nav a { position: relative; color: #9AA69D; font-size: 20px; font-weight: 400; padding-bottom: 4px; text-decoration: none; transition: color 160ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0%; height: 2px; background: #3DDC5A; transition: width 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav a:hover { color: #E8EDE9; } .ds-nav a:hover::after, .ds-nav a.ds-active::after { width: 100%; } .ds-nav a.ds-active { color: #3DDC5A; } .ds-nav a:focus-visible { outline: 2px solid #3DDC5A; outline-offset: 3px; border-radius: 8px; }"
+    },
+    {
+      "name": "Story Rail",
+      "kind": "custom",
+      "refersTo": "panel-grid",
+      "description": "2px progress rail with 16px stop dots: hairline at rest, green ring when reached, green fill plus haze ring when active; step text brightens with it.",
+      "html": "<div class=\"ds-story\"><div class=\"ds-rail\"><span class=\"ds-rail-track\"></span><span class=\"ds-rail-fill\"></span></div><div class=\"ds-steps\"><section class=\"ds-step\" data-active=\"true\"><span class=\"ds-dot\"></span><h2>Na rota</h2><p>No fim de 2023 saí da programação e fui trabalhar como entregador.</p></section><section class=\"ds-step\" data-active=\"false\"><span class=\"ds-dot\"></span><h2>Donaldo OPS</h2><p>Em junho de 2026 voltei a programar para resolver os problemas da minha própria rota.</p></section></div></div>",
+      "css": ".ds-story { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 0 24px; font-family: Poppins, sans-serif; } .ds-rail { position: relative; } .ds-rail-track, .ds-rail-fill { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; border-radius: 999px; } .ds-rail-track { background-color: rgba(255, 255, 255, 0.09); } .ds-rail-fill { background: linear-gradient(180deg, #3DDC5A 0%, #3DDC5A 85%, transparent 100%); transform-origin: top; transform: scaleY(0.4); transition: transform 120ms linear; } .ds-steps { display: flex; flex-direction: column; } .ds-step { position: relative; padding: 0 0 64px; max-width: 60ch; } .ds-dot { position: absolute; top: 8px; left: -56px; width: 16px; height: 16px; border-radius: 999px; border: 2px solid rgba(255, 255, 255, 0.09); background-color: #090C0A; transition: border-color 280ms cubic-bezier(0.22, 1, 0.36, 1), background-color 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-step[data-active='true'] .ds-dot { border-color: #3DDC5A; background-color: #3DDC5A; box-shadow: 0 0 0 5px rgba(61, 220, 90, 0.25); } .ds-step h2 { margin: 0; font-size: clamp(22px, 2.6vw, 30px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: #9AA69D; text-wrap: balance; transition: color 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-step p { margin: 16px 0 0; font-size: 16px; line-height: 1.75; color: #9AA69D; transition: color 280ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-step[data-active='true'] h2, .ds-step[data-active='true'] p { color: #E8EDE9; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Depot",
+    "overview": "A near-black, green-tinged ground (`bg`) with three fixed radial glows in the corners, over which content sits on translucent surfaces that are barely lighter than the page and are defined by a 1px white-at-9% hairline rather than by fill. One accent, a bright signal green, is spent on small things: the underline of the active nav link, the icon inside a badge, the border of a hovered tile, the text of the primary pill button, the fill of the progress rail. Everything else is greys with a green undertone. The mood is a lit warehouse at night: quiet, structured, one colour of light.\n\nDensity is editorial rather than dashboard-like. Text columns are capped at 60–70ch, section titles are followed by a fading hairline, headings are tight-tracked Poppins, numbers are tabular. Depth is conveyed by borders and a soft ambient shadow, with a green glow reserved for hover and focus. Illustrations are single-stroke line drawings in `text-muted` with one green element, drawn over a faint 28px grid panel.\n\nMotion is a single easing curve (`cubic-bezier(0.22, 1, 0.36, 1)`) at three durations (160/280/460ms), fade-up entrances of 600–700ms, a hover sheen sweep on pill buttons, and a stroke draw-in on the illustrations. Every animation is declared inside `@media (prefers-reduced-motion: no-preference)`, so with reduced motion nothing is ever at opacity 0: content is born visible.",
+    "keyCharacteristics": [
+      "One accent (`#3DDC5A`) used at small scale; large areas are never green.",
+      "Surfaces are translucent white at 3.5% with a 9% hairline; hover lifts to 6% and strengthens the border.",
+      "Two container recipes: informational (`surface` + `border` + `text-muted`) and actionable (`accent-deep` + `border-strong` + `accent`).",
+      "Pill radius on every interactive element; 18/12/8px on containers by size.",
+      "Poppins only, 300–700 loaded, 400–700 used; negative tracking on headings, tabular numerals on dates.",
+      "Motion lives only inside the no-preference gate; one easing curve everywhere."
+    ],
+    "rules": [
+      { "name": "The Two Recipes Rule", "body": "A container is either informational (`surface` fill, `border` hairline, `text-muted` text) or actionable (`accent-deep` fill, `border-strong` hairline, `accent` text). Do not mix the halves; a badge is never green-filled and a button is never grey-filled with green text.", "section": "colors" },
+      { "name": "The Border Speaks Rule", "body": "State is communicated through `border-color` before anything else: rest `border` → hover `border-strong` (informational) or `accent` (actionable, tiles, contact rows). Fills move at most one step (`surface` → `surface-hover`).", "section": "colors" },
+      { "name": "The Small Green Rule", "body": "The accent is a highlight, not a field: the largest green area on any screen is a pill button or a 42px icon circle. Large green fills, green headings and green backgrounds do not exist in this system; the heading gradient (`#F2F7F3` → `#A1CCA5` → `#3DDC5A`) is the only place green touches display type, and only on the home hero.", "section": "colors" },
+      { "name": "The Tight Heading Rule", "body": "Any Poppins set at 22px or larger carries negative tracking: -0.02em by default, -0.03em at 44px and up. Body text and labels never do.", "section": "typography" },
+      { "name": "The Tabular Date Rule", "body": "Periods, years and figures use `font-variant-numeric: tabular-nums` so the sticky panel and fact rows do not jitter when the number changes.", "section": "typography" },
+      { "name": "The Glow-On-State Rule", "body": "The green glow shadow appears only in response to hover or focus-within. At rest a surface has `soft`, `card`, or no shadow; the hairline border does the separating.", "section": "elevation" },
+      { "name": "The Lift Rule", "body": "Hover lifts by transform, never by shadow growth alone: `translateY(-2px)` on pill buttons, `-3px` on icon pills, `-4px` on cards and tiles, `translateX(4px)` on contact rows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do build every container from the informational recipe (`surface` + `border` + `text-muted`) and every action from the actionable recipe (`accent-deep` + `border-strong` + `accent`).",
+      "Do express hover through `border-color` first, then one fill step (`surface` → `surface-hover`), then a 2–4px `translateY` lift; use the `glow` shadow only on hover or focus-within.",
+      "Do use pill radius on anything clickable and 18/12/8px on containers by size.",
+      "Do set headings at 22px+ with -0.02em tracking (-0.03em from 44px) and dates with `tabular-nums`.",
+      "Do declare every `animation` and every `opacity: 0` start state inside `@media (prefers-reduced-motion: no-preference)`; use `enter()`, `revealable`, `revealStagger` and `sheenOnHover` from `src/styles/motion.ts` and the theme's `transitions.fast/base/slow`.",
+      "Do author new illustrations as inline SVG on the 400×300 viewBox, class `ink` (2px, round caps, `currentColor`), one `accent` element, `pathLength={1}`.",
+      "Do use react-icons (Feather `fi` for UI, Simple Icons `si` for the tech grid) at 15–19px, tinted `accent` only when they are the signal inside a neutral element.",
+      "Do keep text columns at 60–70ch and respect the fixed 85px header with `scroll-margin-top: 100px` on anchors."
+    ],
+    "donts": [
+      "Don't fill large areas with the accent, colour headings green, or add a second accent hue; the hero heading gradient is the only green display treatment.",
+      "Don't use the legacy palette layer in `theme.ts` (`grey*`, `secondary*`, `backGreen*`, `primary*`); it is retained as a safety net and no component consumes it.",
+      "Don't use opaque light surfaces or borders heavier than 1px on containers; separation comes from the 9% hairline, not from fill contrast.",
+      "Don't ship a resting drop shadow in green, a hard offset shadow, or a shadow as the only hover response.",
+      "Don't write animations outside the reduced-motion gate or rely on the global duration-zeroing rule to un-hide `fill-mode: both` entrances.",
+      "Don't introduce a second typeface, a system display face, uppercase kickers above headings, or letter-spaced labels larger than 12px; the uppercase `label` is a group heading inside a card, not an eyebrow.",
+      "Don't add new MUI components; the Chip and Modal on the Projects page are a leftover styled from tokens, not a pattern to extend."
+    ]
+  }
+}

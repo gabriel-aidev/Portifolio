@@ -77,8 +77,47 @@ export const StyledArticle = styled.article`
     gap: 16px;
     padding: 18px;
 
-    video {
+    .clip {
+      position: relative;
       width: min(34%, 240px);
+    }
+
+    .clip-sound {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: ${({ theme }) => theme.radii.pill};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      background-color: rgba(9, 12, 10, 0.8);
+      color: ${({ theme }) => theme.colors.text};
+      transition: border-color ${({ theme }) => theme.transitions.fast},
+        color ${({ theme }) => theme.transitions.fast},
+        transform ${({ theme }) => theme.transitions.fast};
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    .clip-sound:hover {
+      border-color: ${({ theme }) => theme.colors.accent};
+      transform: translateY(-1px);
+    }
+
+    .clip-sound[aria-pressed='true'] {
+      border-color: ${({ theme }) => theme.colors.borderStrong};
+      background-color: ${({ theme }) => theme.colors.accentDeep};
+      color: ${({ theme }) => theme.colors.accent};
+    }
+
+    video {
+      width: 100%;
       max-height: none;
       aspect-ratio: 9 / 16;
       object-fit: cover;
